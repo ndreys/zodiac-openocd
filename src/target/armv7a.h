@@ -127,6 +127,12 @@ target_to_armv7a(struct target *target)
 	return container_of(target->arch_info, struct armv7a_common, arm);
 }
 
+static inline bool is_armv7a(struct armv7a_common *armv7a)
+{
+	return armv7a->common_magic == ARMV7_COMMON_MAGIC;
+}
+
+
 /* register offsets from armv7a.debug_base */
 
 /* See ARMv7a arch spec section C10.2 */
